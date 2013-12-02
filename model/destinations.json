@@ -1,0 +1,15 @@
+{
+	"cities": [{
+		"name": "Delhi"
+	},
+	{
+		"name": "Nainital"
+	},
+	{
+		"name": "Masoori"
+	},
+	{
+		"name": "Jaipur"
+	}
+	]
+}

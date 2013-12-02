@@ -17,6 +17,8 @@ local.properties
 .loadpath
 node_modules/
 
+info.txt
+
 # External tool builders
 .externalToolBuilders/
 

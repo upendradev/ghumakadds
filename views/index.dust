@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>{content.pageTitle}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -38,23 +38,28 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
+            {#content.mainNav dest=data.destinations.cities}
+              {@select key=$idx}
+                {@eq value=0}
+                 <li class="active"><a href=""> {title} </a></li>
+                {/eq}
+                {@eq value=1}
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Destinations <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                      {#dest}
+                        <li><a href="#">{name}</a></li>
+                      {/dest}                 
+                    </ul>
+                  </li>
+                {/eq}
+                {@default}<li> <a href="">{title}</a></li>{/default}
+              {/select}
+            {/content.mainNav}
           </ul>
-          <form class="navbar-form navbar-right">
+          <h3 class="salutation">Hello, Ghumakkad {data.name}!</h3>
+         {! <form class="navbar-form navbar-right">
             <div class="form-group">
               <input type="text" placeholder="Email" class="form-control">
             </div>
@@ -62,7 +67,7 @@
               <input type="password" placeholder="Password" class="form-control">
             </div>
             <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
+          </form>  !}
         </div><!--/.navbar-collapse -->
       </div>
     </div>
@@ -70,9 +75,38 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Hello, Ghumakkad {name}!</h1>
+        <div id="home-slider" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="../img/fort1.png" alt="...">
+            </div>
+            <div class="item">
+              <img src="../img/fort2.png" alt="...">
+            </div>
+            <div class="item">
+              <img src="../img/fort3.png" alt="...">
+            </div>
+            <div class="item">
+              <img src="../img/fort5.png" alt="...">
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </div>
         <p></p>
-        <p><a class="btn btn-primary btn-lg">We are building this community.</a></p>
       </div>
     </div>
 
@@ -95,19 +129,15 @@
       <footer>
         <p>&copy; theghumakkads.com 2013</p>
       </footer>
-    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-
-        <script src="js/vendor/bootstrap.min.js"></script>
-
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-
-        <script>
+    </div> <!-- /container -->        
+    <script src="js/require-2.0.1.js" data-main="js/main"></script>
+      {!  <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src='//www.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
+        </script> !}
+
+        {! @contextDump key="current" to="output" / !} 
     </body>
 </html>

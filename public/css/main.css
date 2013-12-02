@@ -6,7 +6,20 @@
 
 
 
-
+.jumbotron{
+	padding-top: 0;
+}
+.salutation{
+	color: #FFF;
+    float: right;
+    font-size: 20px;
+    margin: 14px 0;
+}
+.navbar-brand{
+	background: url('../img/logo.png') no-repeat 0 -5px transparent;
+	width: 260px;
+	text-indent: -999px;
+}
 
 
 

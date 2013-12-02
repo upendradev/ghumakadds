@@ -1,0 +1,14 @@
+{
+	"pageTitle": "The Ghumakkads",
+	"mainNav": [
+				{"title": "Home"},
+				{"title": "Destinations"},
+				{"title": "Contact"},
+				{"title": "About"}
+				],
+	"salutation": {
+		"greeting": "Hello",
+		"title": "Ghumakkad"
+	}
+			
+}
