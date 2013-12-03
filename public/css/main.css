@@ -21,6 +21,9 @@
 	text-indent: -999px;
 }
 
+.articles .item{padding-bottom: 20px; border-bottom: 1px solid #d5d5d5}
+.articles .item img{float: left; margin-right: 20px;}
+
 
 
 
