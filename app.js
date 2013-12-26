@@ -2,8 +2,9 @@ var express = require('express')
   , http = require('http')
   , dust = require('dustjs-linkedin')
   , cons = require('consolidate') 
-  ,path = require('path')
-  ,util = require('util');
+  , path = require('path')
+  , util = require('util')
+  , controller = require('node-mvc-controller');
 
 var app = express();
 
@@ -36,7 +37,7 @@ app.listen(app.get('port'), app.get('ipaddress'), function(){
 });
 
 
-require('./controllers')(app);
+controller(__dirname+'/controllers', app);
 
 /*
 

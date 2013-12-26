@@ -3,7 +3,7 @@ module.exports = function(req, res, next){
 
 					req.data = req.data || {};
 					req.data = {
-						"name": "UD",
+						"name": req.session.UserName || '',
 						"destinations" : destinations
 					};
 					next();

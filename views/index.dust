@@ -58,7 +58,7 @@
               {/select}
             {/content.mainNav}
           </ul>
-          <h3 class="salutation">Hello, Ghumakkad {data.name}!</h3>
+          <h3 class="salutation">Hello, Ghumakkad <span class="user-name">{data.name} </span>!</h3>
          {! <form class="navbar-form navbar-right">
             <div class="form-group">
               <input type="text" placeholder="Email" class="form-control">
@@ -158,5 +158,18 @@
         </script> !}
 
         {! @contextDump key="current" to="output" / !} 
+      {>"inc/components/modal" customClass="homepage" /}
+        {<header}
+          Welcome to Ghumakkad's world
+        {/header}
+        {<body}
+          <form name="welcome" action="getusername" method="POST" role="form">
+            <div class="form-group">
+              <label for="UserName">Enter your name</label>
+              <input name="UserName" value="" id="UserName" placeholder="Enter your name" class="form-control"/>
+              <input type="submit" name="continue" value="Enter" class="ajaxify btn btn-primary" data-callback="getUserName"/>
+            </div>
+          </form>
+        {/body}
     </body>
 </html>

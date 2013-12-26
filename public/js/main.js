@@ -24,7 +24,9 @@
 			"angularjs": "lib/angular-v1.2.3",
 			"dust": "lib/dust-core-2.2.2",
 			"dust-helpers" : "lib/dust-helpers",
-			"bootstrap": "lib/bootstrap"
+			"bootstrap": "lib/bootstrap",
+			"ajaxify": "lib/util/ajaxify",
+			"callbacks": "lib/util/callbacks"
 		},
 		useStrict: true,
 		shim: {
